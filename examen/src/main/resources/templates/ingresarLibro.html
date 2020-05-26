@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<h1 class="display-4">Ingresar un contribuyente al registro</h1>
+	<h1 class="display-4">Ingresar un libro al registro</h1>
 		<form th:action="@{/guardarLibro}"  method="post" th:object="${libro}">
 			<div class="form group">
 			
@@ -24,20 +24,20 @@
 				<span th:errors="*{s_isbn}" style="color:#ae3232;"></span><br>
 				
 				<label>Categoria:</label>
-				<select class="form-control form-control-lg" th:field="*{c_categoria.c_categoria}">
+				<select class="form-control form-control-lg" th:field="*{categoria.c_categoria}">
 		  			<option th:each="categoria : ${categorias}" 
 		  					th:value=${categoria.c_categoria} 
 		  					th:text="${categoria.s_categoria}">
 		  			</option>	
 				</select><br>
 				
-				<label>Estado:</label>
-				<select class="form-control form-control-lg" th:field="*{b_estado}">
-		  			<option th:each="importancia : ${importancias}" 
-		  					th:value=${importancia.c_importancia} 
-		  					th:text="${importancia.s_importancia}">
-		  			</option>	
-				</select><br>
+				<div class="form-check">
+					<label>Estado:</label>
+					<input type="checkbox" class="form-check-input" th:field="*{b_estado}" th:value="${true}">
+					<label class="form-check-label">Activo:</label> 
+					<iinput type="checkbox" class="form-check-input" th:field="*{b_estado}" th:value="${false}">
+					<label class="form-check-label">Inactivo:</label> 
+				</div>
 				
 			</div>
 			<input type="submit" class="btn btn-success" value="Guardar Libro">

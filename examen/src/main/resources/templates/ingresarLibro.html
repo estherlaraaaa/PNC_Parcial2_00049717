@@ -12,19 +12,19 @@
 			<div class="form group">
 			
 				<label>Titulo:</label>
-				<input class="form-control" type="text" name="s_titulo" th:field="${libro.s_titulo}" requiered>
+				<input class="form-control" type="text" name="s_titulo" th:field="${libro.s_titulo}" required>
 				<span th:errors="*{s_titulo}" style="color:#ae3232;"></span><br>
 				
 				<label>Autor:</label>
-				<input class="form-control" type="text" name="s_autor" th:field="${libro.s_autor}" requiered>
+				<input class="form-control" type="text" name="s_autor" th:field="${libro.s_autor}" required>
 				<span th:errors="*{s_autor}" style="color:#ae3232;"></span><br>
 				
 				<label>ISBN:</label>
-				<input class="form-control" type="text" name="s_isbn" th:field="${libro.s_isbn}" requiered>
+				<input class="form-control" type="text" name="s_isbn" th:field="${libro.s_isbn}" required>
 				<span th:errors="*{s_isbn}" style="color:#ae3232;"></span><br>
 				
 				<label>Categoria:</label>
-				<select class="form-control form-control-lg" th:field="*{categoria.c_categoria}" requiered>
+				<select class="form-control form-control-lg" th:field="*{categoria.c_categoria}" required>
 		  			<option th:each="categoria : ${categorias}" 
 		  					th:value=${categoria.c_categoria} 
 		  					th:text="${categoria.s_categoria}">

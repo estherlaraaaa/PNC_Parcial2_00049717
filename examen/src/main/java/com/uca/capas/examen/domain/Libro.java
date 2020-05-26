@@ -34,25 +34,22 @@ public class Libro {
 	
 	@Column(name="s_titulo")
 	@Size(max=500,message="No puede ser mayor a 500")
-	@NotEmpty(message="No puede estar vacio")
+	@NotEmpty(message="Este campo no puede estar vacio")
 	private String s_titulo;
 	
 	@Column(name="s_autor")
 	@Size(max=150,message="No puede ser mayor a 150")
-	@NotEmpty(message="No puede estar vacio")
+	@NotEmpty(message="Este campo no puede estar vacio")
 	private String s_autor;
 	
 	@Column(name="s_isbn")
 	@Size(max=10,message="No puede ser mayor a 10")
-	@NotEmpty(message="No puede estar vacio")
+	@NotEmpty(message="Este campo no puede estar vacio")
 	private String s_isbn;
 	
 	@ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "c_categoria")
     private Categoria categoria;
-	
-	@Transient
-	private Integer c_categoriafk;
 	
 	@Column(name="f_ingreso")
 	private Timestamp  f_ingreso;
@@ -73,14 +70,6 @@ public class Libro {
 
 	public void setB_estado(Boolean b_estado) {
 		this.b_estado = b_estado;
-	}
-
-	public Integer getC_categoriafk() {
-		return c_categoriafk;
-	}
-
-	public void setC_categoriafk(Integer c_categoriafk) {
-		this.c_categoriafk = c_categoriafk;
 	}
 
 	public Libro() {

@@ -21,6 +21,8 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
+
 
 @Entity
 @Table(schema="public",name="cat_libro")

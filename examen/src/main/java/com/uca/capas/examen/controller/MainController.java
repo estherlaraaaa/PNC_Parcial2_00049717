@@ -99,7 +99,7 @@ public class MainController {
 			}
 			
 			mav.addObject("categorias", categorias);
-			mav.setViewName("inicio");
+			mav.setViewName("ingresarLibro");
 		}
 		else 
 		{

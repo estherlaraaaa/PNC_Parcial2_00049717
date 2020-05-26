@@ -1,5 +1,7 @@
 package com.uca.capas.examen.dao;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -37,11 +39,21 @@ public class LibroDAOImpl implements LibroDAO{
 	@Override
 	@Transactional
 	public void save(Libro libro) throws DataAccessException {
-		if(libro.getC_libro() == null) { 
-			entityManager.persist(libro);
-		}
-		else { 
-			entityManager.merge(libro); 
+		try {
+			if(libro.getC_libro() == null) 
+			{
+				long millis=System.currentTimeMillis();  
+				libro.setF_ingreso(new Timestamp(Calendar.getInstance().getTime().getTime()));
+				entityManager.persist(libro);
+			}
+			else 
+			{
+				entityManager.merge(libro);
+				entityManager.flush();
+			}
+		}catch(Throwable e) 
+		{
+			e.printStackTrace();
 		}
 	}
 

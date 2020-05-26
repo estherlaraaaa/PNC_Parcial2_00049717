@@ -32,11 +32,11 @@
 				</select><br>
 				
 				<div class="form-check">
-					<label>Estado:</label>
-					<input type="checkbox" class="form-check-input" th:field="*{b_estado}" th:value="${true}">
-					<label class="form-check-label">Activo:</label> 
-					<iinput type="checkbox" class="form-check-input" th:field="*{b_estado}" th:value="${false}">
-					<label class="form-check-label">Inactivo:</label> 
+					<input class="form-check-input" type="checkbox" value="*{b_estado}" th:field="*{b_estado}" th:checked="*{b_estado}" id="b_estado">
+					<label class="form-check-label" for="b_estado">
+						 Estado (Activo)
+					</label>
+					<small th:errors="*{b_estado}" style="color: #FF0000"></small> 
 				</div>
 				
 			</div>

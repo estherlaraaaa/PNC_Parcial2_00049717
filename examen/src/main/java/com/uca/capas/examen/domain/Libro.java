@@ -18,9 +18,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(schema="public",name="cat_libro")
@@ -133,7 +133,7 @@ public class Libro {
 			return "";
 		}
 		else{
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
 			String shortdate = sdf.format(this.f_ingreso.getTime());
 			return shortdate;
 		}
